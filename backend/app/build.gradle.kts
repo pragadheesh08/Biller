@@ -7,8 +7,9 @@
  */
 
 plugins {
-    // Apply the application plugin to add support for building a CLI application in Java.
-    application
+    id("org.springframework.boot") version "3.5.7"
+    id("io.spring.dependency-management") version "1.1.7"
+    java
 }
 
 repositories {
@@ -17,8 +18,23 @@ repositories {
 }
 
 dependencies {
-    // This dependency is used by the application.
-    implementation(libs.guava)
+    // REST API
+    implementation("org.springframework.boot:spring-boot-starter-web")
+
+    // Validation
+    implementation("org.springframework.boot:spring-boot-starter-validation")
+
+    // Database ORM
+    // implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+
+    // Security
+    // implementation("org.springframework.boot:spring-boot-starter-security")
+
+    // PostgreSQL
+    runtimeOnly("org.postgresql:postgresql")
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.15")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
 }
 
 testing {
@@ -36,9 +52,4 @@ java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
     }
-}
-
-application {
-    // Define the main class for the application.
-    mainClass = "org.biller.App"
 }

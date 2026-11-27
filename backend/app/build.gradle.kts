@@ -21,20 +21,32 @@ dependencies {
     // REST API
     implementation("org.springframework.boot:spring-boot-starter-web")
 
+    // JDBC + DataSource + HikariCP
+    implementation("org.springframework.boot:spring-boot-starter-jdbc")
+
     // Validation
     implementation("org.springframework.boot:spring-boot-starter-validation")
 
-    // Database ORM
-    // implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-
-    // Security
-    // implementation("org.springframework.boot:spring-boot-starter-security")
-
     // PostgreSQL
     runtimeOnly("org.postgresql:postgresql")
+
+    // OpenAPI / Swagger
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.15")
+
+    // Flyway
+    implementation("org.flywaydb:flyway-core")
+    implementation("org.flywaydb:flyway-database-postgresql")
+
+    // Password hashing
+    implementation("org.springframework.security:spring-security-crypto")
+
+    // Testing
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    implementation("org.springframework.boot:spring-boot-starter-validation")
+
+    //Hashing
+    implementation("org.springframework.security:spring-security-crypto:7.0.0")
+    implementation("org.bouncycastle:bcprov-jdk18on:1.78.1")
+    
 }
 
 testing {

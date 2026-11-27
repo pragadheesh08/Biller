@@ -1,0 +1,13 @@
+# Database
+spring.datasource.url=jdbc:postgresql://localhost:5432/biller
+spring.datasource.username=postgres
+spring.datasource.password=xxxx
+
+spring.datasource.hikari.maximum-pool-size=10
+spring.datasource.hikari.minimum-idle=2
+spring.datasource.hikari.pool-name=ApplicationPool
+
+# Flyway
+spring.flyway.enabled=true
+spring.flyway.locations=classpath:db/migration
+spring.flyway.validate-migration-naming=true

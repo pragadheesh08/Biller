@@ -1,4 +1,4 @@
-package org.biller.modules.dto;
+package org.biller.modules.test.dto;
 
 import java.time.Instant;
 

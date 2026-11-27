@@ -1,6 +1,6 @@
 package org.biller.modules.test.service;
 
-import org.biller.modules.dto.TestRequest;
+import org.biller.modules.test.dto.TestRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;

@@ -2,8 +2,8 @@ package org.biller.modules.test.controller;
 
 import jakarta.validation.Valid;
 
-import org.biller.modules.dto.TestRequest;
-import org.biller.modules.dto.TestResponse;
+import org.biller.modules.test.dto.TestRequest;
+import org.biller.modules.test.dto.TestResponse;
 import org.biller.modules.test.service.TestService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

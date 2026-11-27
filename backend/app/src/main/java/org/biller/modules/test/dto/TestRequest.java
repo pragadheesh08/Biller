@@ -1,5 +1,5 @@
 
-package org.biller.modules.dto;
+package org.biller.modules.test.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

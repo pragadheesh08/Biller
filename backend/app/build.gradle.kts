@@ -30,12 +30,13 @@ dependencies {
     // PostgreSQL
     runtimeOnly("org.postgresql:postgresql")
 
+
     // OpenAPI / Swagger
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.15")
 
     // Flyway
     implementation("org.flywaydb:flyway-core")
-    implementation("org.flywaydb:flyway-database-postgresql")
+    runtimeOnly("org.flywaydb:flyway-database-postgresql")
 
     // Password hashing
     implementation("org.springframework.security:spring-security-crypto")
@@ -64,4 +65,13 @@ java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
     }
+}
+
+flyway {
+    url = "jdbc:postgresql://localhost:5432/mydb"
+    user = "postgres"
+    password = "your_password"
+
+    schemas = arrayOf("public")
+    locations = arrayOf("filesystem:src/main/resources/db/migration")
 }

@@ -2,6 +2,7 @@ package org.biller.modules.customer.controller;
 
 import java.sql.SQLException;
 import java.time.Instant;
+import java.util.Optional;
 
 import org.biller.modules.customer.dto.CreateCustomerRequest;
 import org.biller.modules.customer.dto.CustomerResponse;
@@ -54,7 +55,17 @@ public class CustomerController {
         }
         
     }
-
-
-    
+    @GetMapping ("/customers/{id}")
+    public CustomerResponse customerdetails(Long id){
+        try{
+            Optional<Customer> a = this.repository.findById(id);
+            if (a.isEmpty()){
+                return new CustomerResponse("Not Found", null);
+            }
+            return new CustomerResponse("Success",a.get());  
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return new CustomerResponse("Failed",null);
+        }
+    }
 }

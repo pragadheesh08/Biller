@@ -1,0 +1,12 @@
+CREATE TABLE customers (
+    id BIGINT GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1)
+    PRIMARY KEY,
+    name VARCHAR(100),
+    contact_no VARCHAR(15),
+    address_line1 VARCHAR(150),
+    address_line2 VARCHAR(150),
+    address_line3 VARCHAR(150),
+    GSTIN VARCHAR(20),
+    created_at TIMESTAMP WITH TIME ZONE
+        NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
